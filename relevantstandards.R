@@ -31,7 +31,7 @@ top_ten <- function(){ #pulls top 10 bestsellers then populates .xlsx files of l
   }
 }
 
-find_relevant <- function(SKU){
+find_relevant <- function(SKU){ #finds single standard's relevant standards from SKU
   customers <- filter(xl, ProductId == SKU)
   total_orders <- data.frame(OrderNumber = character())
   other_ordered_standards <- data.frame(Owner_GUID = character(), OrderNumber = character(), ProductId = character())
