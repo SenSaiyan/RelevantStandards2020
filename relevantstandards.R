@@ -46,6 +46,7 @@ find_relevant <- function(SKU){ #finds single standard's relevant standards from
   occurances <- table(unlist(other_standards_bought$ProductId))
   occurances_df <- as.data.frame(occurances)
   occurances_ordered <- arrange(occurances_df, desc(Freq)) #end goal data frame
+  top_3_ordered <- head(occurances_ordered, 3) #top 3 most relevant standards
   filename_clean <- str_remove_all(standard_input, "[(): /]")
   filepath <- paste("C:/Users/djiang/relevantstandardscarousel/Jul 2020/", filename_clean, '.xlsx', sep = "") #change to local folder
   tmp <- write_xlsx(occurances_ordered, filepath)
